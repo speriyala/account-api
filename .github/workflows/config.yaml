@@ -32,13 +32,13 @@ jobs:
           java-version: "11"
 
       - name: Clean Mule Project
-        run: mvn clean
+        run: mvn clean install
 
       - name: Run Munits
         run: mvn clean test
     
       - name: Package Mule project
         run: mvn clean package
-
+ 
       - name : Deploy the code
         run: mvn -x clean deploy -DmuleDeploy
